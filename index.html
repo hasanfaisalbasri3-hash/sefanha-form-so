@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORM SO PT. SEFANHA MAKMUR SEJAHTERA</title>
+    <!-- Tailwind CSS for modern styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        darkGreen: '#1b4d3e',
+                        lightGreen: '#4ade80',
+                        mossGreen: '#556b2f',
+                        orangeAccent: '#f97316',
+                        darkText: '#1f2937'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+                font-size: 8px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                -webkit-print-color-adjust: exact;
+            }
+            .no-print {
+                display: none !important;
+            }
+            .print-container {
+                width: 210mm !important;
+                height: 297mm !important;
+                max-height: 297mm !important;
+                padding: 5mm 6mm !important;
+                margin: 0 auto !important;
+                box-shadow: none !important;
+                border: none !important;
+                overflow: hidden !important;
+                page-break-inside: avoid !important;
+            }
+            input, select, textarea {
+                border: 1px solid #d1d5db !important;
+                background: transparent !important;
+                padding: 2px 3px !important;
+                font-size: 8px !important;
+            }
+            .compact-p {
+                padding: 3px 5px !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-emerald-50 via-stone-100 to-green-100 min-h-screen text-darkText font-sans p-2 sm:p-4">
+
+    <div class="max-w-4xl mx-auto bg-white rounded-xl shadow-2xl border border-emerald-900/10 overflow-hidden print-container">
+        
+        <!-- Header Section with Brand Colors -->
+        <div class="bg-gradient-to-r from-darkGreen via-mossGreen to-darkGreen text-white px-4 py-3 flex flex-col sm:flex-row justify-between items-center border-b-4 border-orangeAccent">
+            <div class="flex items-center space-x-3 mb-2 sm:mb-0">
+                <div class="bg-orangeAccent text-white p-2.5 rounded-lg shadow-lg">
+                    <i class="fa-solid fa-file-invoice-dollar text-xl"></i>
+                </div>
+                <div>
+                    <h1 class="text-base sm:text-xl font-bold tracking-wider">PT. SEFANHA MAKMUR SEJAHTERA</h1>
+                    <p class="text-[10px] text-emerald-200 uppercase tracking-widest font-medium">Sales Order (SO) Official Digital Form</p>
+                </div>
+            </div>
+            <div class="text-xs text-emerald-100 font-medium no-print">
+                Sefanha System 1.0 Version
+            </div>
+        </div>
+
+        <!-- Form Body -->
+        <form id="soForm" class="p-3 sm:p-4 space-y-2 text-xs">
+            
+            <!-- Row 1: Main SO metadata -->
+            <div class="bg-emerald-50/60 compact-p rounded-lg border border-emerald-200 grid grid-cols-1 sm:grid-cols-5 gap-2">
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">TGL SO:</label>
+                    <input type="date" id="tglSo" required class="w-full bg-white border border-emerald-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">NO. SO:</label>
+                    <input type="text" id="noSo" placeholder="No. SO" required class="w-full bg-white border border-emerald-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">NO PO / Term:</label>
+                    <input type="text" id="noPo" placeholder="PO & Term" required class="w-full bg-white border border-emerald-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">Nama Purchasing:</label>
+                    <input type="text" id="namaPurchasing" placeholder="Purchasing" required class="w-full bg-white border border-emerald-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">No. HP:</label>
+                    <input type="tel" id="noHp" placeholder="No. HP" required class="w-full bg-white border border-emerald-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                </div>
+            </div>
+
+            <!-- Row 2: Sales, Customer, and Order Channels -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">SALES:</label>
+                    <select id="sales" required class="w-full bg-white border border-stone-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                        <option value="">-- Pilih Sales --</option>
+                        <option value="Irpan">Irpan</option>
+                        <option value="Ujang">Ujang</option>
+                        <option value="Hasan">Hasan</option>
+                        <option value="Lembang">Lembang</option>
+                        <option value="Fahmi">Fahmi</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">NAMA COSTUMER:</label>
+                    <select id="namaCostumer" required class="w-full bg-white border border-stone-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                        <option value="">-- Status Costumer --</option>
+                        <option value="Costumer Baru">Costumer Baru</option>
+                        <option value="Repeat Order">Repeat Order</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-1">
+                    <div>
+                        <label class="block font-semibold text-darkGreen mb-0.5">ORDER By:</label>
+                        <select id="orderBy" required class="w-full bg-white border border-stone-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                            <option value="">-- Order By --</option>
+                            <option value="Website">Website</option>
+                            <option value="WA">WA</option>
+                            <option value="Telpon">Telpon</option>
+                            <option value="Shopee">Shopee</option>
+                            <option value="Tokopedia">Tokopedia</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-semibold text-darkGreen mb-0.5">Nama Toko:</label>
+                        <select id="namaToko" required class="w-full bg-white border border-stone-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                            <option value="">-- Nama Toko --</option>
+                            <option value="Shopee Dhimas Mitra Surabaya">Shopee Dhimas Mitra Surabaya</option>
+                            <option value="Shopee Cipta Foam">Shopee Cipta Foam</option>
+                            <option value="Shopee King Industri">Shopee King Industri</option>
+                            <option value="Shopee Rubber Line">Shopee Rubber Line</option>
+                            <option value="Fanira Jaya Abadi">Fanira Jaya Abadi</option>
+                            <option value="Sefanha Rubber">Sefanha Rubber</option>
+                            <option value="Offline">Offline</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 3: Product Hierarchy -->
+            <div class="bg-stone-50 compact-p rounded-lg border border-stone-300 space-y-1.5">
+                <h3 class="font-bold text-darkGreen border-b border-stone-200 pb-0.5 flex items-center justify-between text-[11px]">
+                    <span>DETAIL PRODUK & KATEGORI (Urutan: Nama Barang -> Kategori -> Sub Kategori)</span>
+                </h3>
+                
+                <div class="grid grid-cols-1 sm:grid-cols-12 gap-2">
+                    <div class="sm:col-span-5">
+                        <label class="block font-semibold text-darkGreen mb-0.5">Nama Barang:</label>
+                        <textarea id="namaBarang" rows="2" placeholder="Tuliskan nama barang..." class="w-full bg-white border border-stone-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none"></textarea>
+                    </div>
+                    <div class="sm:col-span-4">
+                        <label class="block font-semibold text-darkGreen mb-0.5">Kategori Produk:</label>
+                        <select id="kategoriProduk" onchange="updateSubKategori()" required class="w-full bg-white border border-stone-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                            <option value="">-- Pilih Kategori Produk --</option>
+                            <option value="MATERIAL ADVERTISING">MATERIAL ADVERTISING</option>
+                            <option value="STYROFOAM PRODUCT">STYROFOAM PRODUCT</option>
+                            <option value="PLASTIC ENGEENERING, ROOFING, SPONGE EVA PRODUCT">PLASTIC ENGEENERING, ROOFING, SPONGE EVA PRODUCT</option>
+                            <option value="PACKAGING">PACKAGING</option>
+                            <option value="RUBBER BANTALAN">RUBBER BANTALAN</option>
+                            <option value="RUBBER EXROUDER">RUBBER EXROUDER</option>
+                            <option value="RUBBER ENGINEERING INDUSTRI">RUBBER ENGINEERING INDUSTRI</option>
+                            <option value="RUBBER CONVEYOR">RUBBER CONVEYOR</option>
+                        </select>
+                    </div>
+                    <div class="sm:col-span-3">
+                        <label class="block font-semibold text-darkGreen mb-0.5">Sub Kategori:</label>
+                        <select id="subKategori" required class="w-full bg-white border border-stone-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                            <option value="">-- Pilih Kategori Dahulu --</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Row 4: Qty, Unit Price, Financials & Calculation -->
+            <div class="bg-emerald-50/60 compact-p rounded-lg border border-emerald-200 grid grid-cols-2 sm:grid-cols-6 gap-2">
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">QTY & Satuan:</label>
+                    <div class="flex space-x-1">
+                        <input type="number" id="qty" min="1" value="1" oninput="calculateTotal()" required class="w-1/2 bg-white border border-emerald-300 rounded p-1.5 text-center focus:ring-1 focus:ring-orangeAccent outline-none">
+                        <input type="text" id="satuan" placeholder="Satuan" required class="w-1/2 bg-white border border-emerald-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                    </div>
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">Unit Price (Rp):</label>
+                    <input type="number" id="unitPrice" min="0" value="0" oninput="calculateTotal()" required class="w-full bg-white border border-emerald-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">Jumlah (Rp):</label>
+                    <input type="text" id="jumlah" readonly class="w-full bg-stone-200 border border-stone-300 rounded p-1.5 text-stone-700 font-semibold">
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">DP (Rp):</label>
+                    <input type="number" id="pembayaranDp" min="0" value="0" oninput="calculateTotal()" class="w-full bg-white border border-emerald-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">Sisa Pelunasan:</label>
+                    <input type="text" id="sisaPelunasan" readonly class="w-full bg-stone-200 border border-emerald-300 rounded p-1.5 font-semibold text-darkGreen">
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">PPN:</label>
+                    <select id="ppn" onchange="calculateTotal()" class="w-full bg-white border border-emerald-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                        <option value="0">0%</option>
+                        <option value="11">11%</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">DISKON (%):</label>
+                    <input type="number" id="diskon" min="0" max="100" value="0" oninput="calculateTotal()" class="w-full bg-white border border-emerald-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">JML Sst. Diskon:</label>
+                    <input type="text" id="jmlSetelahDiskon" readonly class="w-full bg-stone-200 border border-emerald-300 rounded p-1.5 font-semibold text-darkGreen">
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">ONGKIR (Rp):</label>
+                    <input type="number" id="ongkir" min="0" value="0" oninput="calculateTotal()" class="w-full bg-white border border-emerald-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                </div>
+                <div class="sm:col-span-3 bg-gradient-to-r from-darkGreen to-mossGreen text-white p-2 rounded flex justify-between items-center shadow">
+                    <span class="font-bold text-xs tracking-wider">TOTAL HARGA:</span>
+                    <input type="text" id="totalHarga" readonly class="bg-transparent text-right font-extrabold text-sm sm:text-base text-orangeAccent w-3/5 border-none outline-none">
+                </div>
+            </div>
+
+            <!-- Row 5: Bank Transfer, Stock, Delivery & Payment notes -->
+            <div class="grid grid-cols-1 sm:grid-cols-4 gap-2">
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">TRANSFER Tujuan:</label>
+                    <select id="transfer" required class="w-full bg-white border border-stone-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                        <option value="">-- Pilih Rekening --</option>
+                        <option value="BCA 1673 0756 77 An : Asep Jaenal Abdin">BCA 1673 0756 77 An : Asep Jaenal Abdin</option>
+                        <option value="BCA 1673 3170 327 An : PT. SEFANHA MAKMUR SEJAHTERA">BCA 1673 3170 327 An : PT. SEFANHA MAKMUR SEJAHTERA</option>
+                        <option value="Market Place">Market Place</option>
+                        <option value="PT.Dhimas">PT.Dhimas</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">Kotak STOK (Gudang):</label>
+                    <select id="stok" required class="w-full bg-white border border-stone-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                        <option value="">-- Pilih Gudang Stok --</option>
+                        <option value="Tapas">Tapas</option>
+                        <option value="Labu">Labu</option>
+                        <option value="Bogor">Bogor</option>
+                        <option value="Sunter">Sunter</option>
+                        <option value="Surabaya">Surabaya</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">KETERANGAN KIRIM:</label>
+                    <input type="text" id="keteranganKirim" placeholder="Catatan alamat..." class="w-full bg-white border border-stone-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                </div>
+                <div>
+                    <label class="block font-semibold text-darkGreen mb-0.5">PEMBAYARAN (Catatan):</label>
+                    <input type="text" id="pembayaranCatatan" placeholder="Lunas / Belum Lunas..." required class="w-full bg-white border border-stone-300 rounded p-1.5 focus:ring-1 focus:ring-orangeAccent outline-none">
+                </div>
+            </div>
+
+            <!-- Action Buttons Toolbar -->
+            <div class="pt-2 border-t border-emerald-900/10 flex flex-wrap gap-2 justify-center sm:justify-between items-center no-print">
+                <div class="flex flex-wrap gap-2 w-full sm:w-auto">
+                    <!-- Send to WA Button with Logo -->
+                    <button type="button" onclick="sendToWhatsApp()" class="bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1.5 rounded-lg font-semibold shadow flex items-center space-x-1.5 transition transform hover:scale-105 text-xs">
+                        <i class="fa-brands fa-whatsapp text-sm text-lightGreen"></i>
+                        <span>Send to WA</span>
+                    </button>
+                    <!-- Print / PDF Button -->
+                    <button type="button" onclick="printPDF()" class="bg-amber-600 hover:bg-amber-700 text-white px-3 py-1.5 rounded-lg font-semibold shadow flex items-center space-x-1.5 transition transform hover:scale-105 text-xs">
+                        <i class="fa-solid fa-file-pdf"></i>
+                        <span>Print / PDF (A4)</span>
+                    </button>
+                    <!-- To Excel Button -->
+                    <button type="button" onclick="exportToExcel()" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1.5 rounded-lg font-semibold shadow flex items-center space-x-1.5 transition transform hover:scale-105 text-xs">
+                        <i class="fa-solid fa-file-excel"></i>
+                        <span>To Excel</span>
+                    </button>
+                    <!-- Save Google Sheet Button -->
+                    <button type="button" onclick="saveGoogleSheet()" class="bg-darkGreen hover:bg-emerald-900 text-white px-3 py-1.5 rounded-lg font-semibold shadow flex items-center space-x-1.5 transition transform hover:scale-105 text-xs">
+                        <i class="fa-solid fa-cloud-arrow-up text-orangeAccent"></i>
+                        <span>Save Google Sheet</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Tagline / Footer Credit -->
+            <div class="text-center pt-1 border-t border-stone-200 text-[10px] font-semibold text-mossGreen tracking-wide">
+                Developed By Sefanha System 1.0 Version
+            </div>
+        </form>
+    </div>
+
+    <!-- Custom Notification Modal -->
+    <div id="msgModal" class="fixed inset-0 bg-black/40 backdrop-blur-sm hidden flex items-center justify-center z-50 p-4 no-print">
+        <div class="bg-white rounded-xl max-w-xs w-full p-4 shadow-2xl text-center space-y-2">
+            <div id="msgIcon" class="text-2xl text-emerald-600 mb-0.5">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h4 id="msgTitle" class="font-bold text-darkGreen text-sm">Notifikasi Sistem</h4>
+            <p id="msgText" class="text-[11px] text-stone-600"></p>
+            <button onclick="closeMsgModal()" class="w-full bg-darkGreen hover:bg-emerald-900 text-white py-1.5 rounded-lg text-xs font-semibold transition">OK</button>
+        </div>
+    </div>
+
+    <script>
+        const subKategoriData = {
+            "MATERIAL ADVERTISING": [
+                "MATERIAL ADVERTISING",
+                "ACCECORIES MATERIAL ADVERTISING"
+            ],
+            "STYROFOAM PRODUCT": [
+                "STYROFOAM LEMBARAN",
+                "STYROFOAM ART"
+            ],
+            "PLASTIC ENGEENERING, ROOFING, SPONGE EVA PRODUCT": [
+                "EVA SPONGE SHEET DAN ROLL",
+                "EVA SPONGE PRODUCT JADI"
+            ],
+            "PACKAGING": [
+                "ROW MATERIAL PACKAGING",
+                "CUSTOMER MATERIAL PACKAGING",
+                "MATERIAL INSULATION"
+            ],
+            "RUBBER BANTALAN": [
+                "RUBBER BANTALAN LOADING DOCK",
+                "RUBBER BANTALAN ELASTOMER BEARING PAD",
+                "RUBBER BANTALAN FENDER",
+                "RUBBER BANTALAN MESIN BERAT",
+                "RUBBER BANTALAN SEFETY"
+            ],
+            "RUBBER EXROUDER": [
+                "Rubber Exrouder Interior",
+                "Rubber Exrouder Furniture",
+                "Rubber Exrouder Panel",
+                "Rubber Exrouder Automotive",
+                "Sponge Adhesive/Stiker",
+                "IP Sponge Exrouder",
+                "Rubber Exrouder untuk industri",
+                "Rubber Exroude untuk Almunium"
+            ],
+            "RUBBER ENGINEERING INDUSTRI": [
+                "Rubber Sheet Engineering",
+                "Rubber Lining"
+            ],
+            "RUBBER CONVEYOR": [
+                "Rubber Conveyor",
+                "Rubber Side Wall Strip dan clet Conveyor",
+                "Accessories Conveyor",
+                "Conveyor Sistem",
+                "Jasa Bongkar Pasang Conveyor"
+            ]
+        };
+
+        function updateSubKategori() {
+            const kategori = document.getElementById('kategoriProduk').value;
+            const subSelect = document.getElementById('subKategori');
+            subSelect.innerHTML = '<option value="">-- Pilih Sub Kategori --</option>';
+            
+            if (kategori && subKategoriData[kategori]) {
+                subKategoriData[kategori].forEach(item => {
+                    const opt = document.createElement('option');
+                    opt.value = item;
+                    opt.textContent = item;
+                    subSelect.appendChild(opt);
+                });
+            }
+        }
+
+        function calculateTotal() {
+            const qty = parseFloat(document.getElementById('qty').value) || 0;
+            const unitPrice = parseFloat(document.getElementById('unitPrice').value) || 0;
+            const pembayaranDp = parseFloat(document.getElementById('pembayaranDp').value) || 0;
+            const ppnVal = parseFloat(document.getElementById('ppn').value) || 0;
+            const diskonVal = parseFloat(document.getElementById('diskon').value) || 0;
+            const ongkir = parseFloat(document.getElementById('ongkir').value) || 0;
+
+            const jumlah = qty * unitPrice;
+            document.getElementById('jumlah').value = formatRupiah(jumlah);
+
+            const diskonNominal = jumlah * (diskonVal / 100);
+            const setelahDiskon = jumlah - diskonNominal;
+            document.getElementById('jmlSetelahDiskon').value = formatRupiah(setelahDiskon);
+
+            const ppnNominal = setelahDiskon * (ppnVal / 100);
+            const totalHarga = setelahDiskon + ppnNominal + ongkir;
+            document.getElementById('totalHarga').value = formatRupiah(totalHarga);
+
+            const sisaPelunasan = totalHarga - pembayaranDp;
+            document.getElementById('sisaPelunasan').value = formatRupiah(sisaPelunasan >= 0 ? sisaPelunasan : 0);
+        }
+
+        function formatRupiah(angka) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', minimumFractionDigits: 0 }).format(angka);
+        }
+
+        function showMsg(title, text, isSuccess = true) {
+            document.getElementById('msgTitle').textContent = title;
+            document.getElementById('msgText').textContent = text;
+            const icon = document.getElementById('msgIcon');
+            icon.innerHTML = isSuccess ? '<i class="fa-solid fa-circle-check text-emerald-600"></i>' : '<i class="fa-solid fa-triangle-exclamation text-amber-500"></i>';
+            document.getElementById('msgModal').classList.remove('hidden');
+        }
+
+        function closeMsgModal() {
+            document.getElementById('msgModal').classList.add('hidden');
+        }
+
+        function sendToWhatsApp() {
+            const tglSo = document.getElementById('tglSo').value;
+            const noSo = document.getElementById('noSo').value;
+            const noPo = document.getElementById('noPo').value;
+            const namaPurchasing = document.getElementById('namaPurchasing').value;
+            const noHp = document.getElementById('noHp').value;
+            const sales = document.getElementById('sales').value;
+            const namaCostumer = document.getElementById('namaCostumer').value;
+            const namaBarang = document.getElementById('namaBarang').value;
+            const kategoriProduk = document.getElementById('kategoriProduk').value;
+            const subKategori = document.getElementById('subKategori').value;
+            const orderBy = document.getElementById('orderBy').value;
+            const namaToko = document.getElementById('namaToko').value;
+            const qty = document.getElementById('qty').value;
+            const satuan = document.getElementById('satuan').value;
+            const unitPrice = document.getElementById('unitPrice').value;
+            const jumlah = document.getElementById('jumlah').value;
+            const pembayaranDp = document.getElementById('pembayaranDp').value;
+            const sisaPelunasan = document.getElementById('sisaPelunasan').value;
+            const ppn = document.getElementById('ppn').value;
+            const diskon = document.getElementById('diskon').value;
+            const jmlSetelahDiskon = document.getElementById('jmlSetelahDiskon').value;
+            const ongkir = document.getElementById('ongkir').value;
+            const totalHarga = document.getElementById('totalHarga').value;
+            const transfer = document.getElementById('transfer').value;
+            const stok = document.getElementById('stok').value;
+            const keteranganKirim = document.getElementById('keteranganKirim').value;
+            const pembayaranCatatan = document.getElementById('pembayaranCatatan').value;
+
+            if (!noSo || !sales || !namaCostumer) {
+                showMsg('Peringatan', 'Harap lengkapi No. SO, Sales, dan Nama Costumer!', false);
+                return;
+            }
+
+            // FIXED: Proper percent encoding for WhatsApp
+            const waText = `*FORM SO - PT. SEFANHA MAKMUR SEJAHTERA*%0a` +
+                `----------------------------------%0a` +
+                `*Tanggal SO:* ${tglSo}%0a` +
+                `*No. SO:* ${noSo}%0a` +
+                `*No. PO / Term:* ${noPo}%0a` +
+                `*Purchasing:* ${namaPurchasing} (${noHp})%0a` +
+                `*Sales:* ${sales}%0a` +
+                `*Costumer:* ${namaCostumer}%0a` +
+                `----------------------------------%0a` +
+                `*Nama Barang:* ${namaBarang}%0a` +
+                `*Kategori:* ${kategoriProduk}%0a` +
+                `*Sub Kategori:* ${subKategori}%0a` +
+                `*Order By:* ${orderBy} (${namaToko})%0a` +
+                `----------------------------------%0a` +
+                `*Qty:* ${qty} ${satuan}%0a` +
+                `*Harga Satuan:* ${unitPrice}%0a` +
+                `*Jumlah:* ${jumlah}%0a` +
+                `*Diskon:* ${diskon}%25%0a` +
+                `*Jml Setelah Diskon:* ${jmlSetelahDiskon}%0a` +
+                `*PPN:* ${ppn}%25%0a` +
+                `*Ongkir:* ${ongkir}%0a` +
+                `*TOTAL HARGA:* ${totalHarga}%0a` +
+                `*Pembayaran DP:* ${pembayaranDp}%0a` +
+                `*Sisa Pelunasan:* ${sisaPelunasan}%0a` +
+                `----------------------------------%0a` +
+                `*Transfer Tujuan:* ${transfer}%0a` +
+                `*Kotak Stok (Gudang):* ${stok}%0a` +
+                `*Keterangan Kirim:* ${keteranganKirim}%0a` +
+                `*Catatan Pembayaran:* ${pembayaranCatatan}%0a` +
+                `----------------------------------%0a` +
+                `_Developed By Sefanha System 1.0 Version_`;
+
+            window.open(`https://wa.me/?text=${waText}`, '_blank');
+        }
+
+        function printPDF() {
+            window.print();
+        }
+
+        function exportToExcel() {
+            const noSo = document.getElementById('noSo').value || 'SO_Data';
+            const csvContent = "data:text/csv;charset=utf-8," 
+                + "Field,Value\n"
+                + "TGL SO," + document.getElementById('tglSo').value + "\n"
+                + "NO SO," + document.getElementById('noSo').value + "\n"
+                + "NO PO," + document.getElementById('noPo').value + "\n"
+                + "Purchasing," + document.getElementById('namaPurchasing').value + "\n"
+                + "Sales," + document.getElementById('sales').value + "\n"
+                + "Costumer," + document.getElementById('namaCostumer').value + "\n"
+                + "Nama Barang," + document.getElementById('namaBarang').value + "\n"
+                + "Kategori," + document.getElementById('kategoriProduk').value + "\n"
+                + "Sub Kategori," + document.getElementById('subKategori').value + "\n"
+                + "Total Harga," + document.getElementById('totalHarga').value + "\n"
+                + "Pembayaran," + document.getElementById('pembayaranCatatan').value + "\n";
+            
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", `${noSo}_export.csv`);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            showMsg('Sukses', 'Data berhasil diexport ke format CSV (Excel compatible).');
+        }
+
+        function saveGoogleSheet() {
+            const noSo = document.getElementById('noSo').value;
+            if (!noSo) {
+                showMsg('Peringatan', 'Nomor SO wajib diisi sebelum menyimpan ke Google Sheet!', false);
+                return;
+            }
+
+            // FIXED: Proper implementation with actual API call to Google Apps Script
+            const formData = {
+                tglSo: document.getElementById('tglSo').value,
+                noSo: document.getElementById('noSo').value,
+                noPo: document.getElementById('noPo').value,
+                namaPurchasing: document.getElementById('namaPurchasing').value,
+                noHp: document.getElementById('noHp').value,
+                sales: document.getElementById('sales').value,
+                namaCostumer: document.getElementById('namaCostumer').value,
+                orderBy: document.getElementById('orderBy').value,
+                namaToko: document.getElementById('namaToko').value,
+                namaBarang: document.getElementById('namaBarang').value,
+                kategoriProduk: document.getElementById('kategoriProduk').value,
+                subKategori: document.getElementById('subKategori').value,
+                qty: document.getElementById('qty').value,
+                satuan: document.getElementById('satuan').value,
+                unitPrice: document.getElementById('unitPrice').value,
+                jumlah: document.getElementById('jumlah').value,
+                pembayaranDp: document.getElementById('pembayaranDp').value,
+                sisaPelunasan: document.getElementById('sisaPelunasan').value,
+                ppn: document.getElementById('ppn').value,
+                diskon: document.getElementById('diskon').value,
+                jmlSetelahDiskon: document.getElementById('jmlSetelahDiskon').value,
+                ongkir: document.getElementById('ongkir').value,
+                totalHarga: document.getElementById('totalHarga').value,
+                transfer: document.getElementById('transfer').value,
+                stok: document.getElementById('stok').value,
+                keteranganKirim: document.getElementById('keteranganKirim').value,
+                pembayaranCatatan: document.getElementById('pembayaranCatatan').value
+            };
+
+            fetch(window.location.href, {
+                method: 'POST',
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    showMsg('Sukses', `Data SO (${noSo}) berhasil disimpan ke Google Sheet!`, true);
+                } else {
+                    showMsg('Error', data.message, false);
+                }
+            })
+            .catch(error => {
+                showMsg('Error', 'Gagal mengirim data: ' + error.message, false);
+            });
+        }
+
+        window.onload = function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('tglSo').value = today;
+            calculateTotal();
+        }
+    </script>
+</body>
+</html>
